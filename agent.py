@@ -124,7 +124,7 @@ async def scrape_jobs(keywords: str, locations: str, max_pages: int = 5) -> str:
     print(f"\n[System] Phase 1: Publicly searching for {keyword_list} across {location_list} (Strictly < 24 Hours)...")
     
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False, slow_mo=200)
+        browser = await p.chromium.launch(headless=True, slow_mo=200)
         context = await browser.new_context(
             viewport={'width': 1920, 'height': 1080},
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
