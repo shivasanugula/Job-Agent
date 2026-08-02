@@ -1,8 +1,10 @@
 name: Run Job Scraper Agent
 
+
 on:
   schedule:
-    - cron: '0 */3 * * *' # Runs automatically every 3 hours
+    - cron: '15 3 * * *'  # Runs at 8:45 AM IST (3:15 AM UTC)
+    - cron: '0 12 * * *'  # Runs at 5:30 PM IST (12:00 PM UTC)
   workflow_dispatch: # Allows you to trigger it manually with a button click
 
 jobs:
